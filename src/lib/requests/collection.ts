@@ -38,7 +38,7 @@ export const getCertainCollectioncurrentValueAndChangeRatherThanYesterdayApi = (
 export const getCertainCollectionNFTSelling = () =>
     getSimpleArrayData<CertainCollectionNFTSelling, CertainCollectionNFTSelling>(
         "d6ca14ae-b28a-49e4-ac26-3bca41ff6850",
-        "1. Weekly number of NFTs sold,1. Cumulative number of NFTs sold,3. Weekly volume(in USD) of NFTs sold,2. Weekly number of NFT buyers Vs.sellers,3. Cumulative volume(in USD) of NFTs sold,4. Weekly average NFT price(in USD)"
+        "Weekly number of NFTs sold,Cumulative number of NFTs sold,Weekly volume(in USD) of NFTs sold,Weekly number of NFT buyers Vs.sellers,Cumulative volume(in USD) of NFTs sold,Weekly average NFT price(in USD)"
     )
 
 export const getCertainCollectionNFTSellingApi = (collectionName: string) =>
@@ -50,7 +50,7 @@ export const getCertainCollectionNFTSellingApi = (collectionName: string) =>
 export const getCertainCollectionMarketplacesComparison = () =>
     getSimpleArrayData<CertainCollectionMarketplacesComparison, CertainCollectionMarketplacesComparison>(
         "ce21943c-8bb0-4967-ad45-39a542c65ed4",
-        "2. Marketplaces share in volume of sale,1. Marketplaces share in number of sale"
+        "Marketplaces share in volume of sale,Marketplaces share in number of sale"
     )
 
 export const getCertainCollectionMarketplacesComparisonApi = (collectionName: string) =>
@@ -60,7 +60,7 @@ export const getCertainCollectionMarketplacesComparisonApi = (collectionName: st
 export const getCertainCollectionMarketplacesComparisonDailyAverage = () =>
     getSimpleArrayData<CertainCollectionMarketplacesComparisonDailyAverage, CertainCollectionMarketplacesComparisonDailyAverage>(
         "dc8743e6-2a4b-45b1-aaf9-283b0b48926a",
-        "1. Daily average number of sales on each marketplace,2. Daily average volume of sales on each marketplace,3. Daily average unique buyers on each marketplace,4. Daily average unique sellers on each marketplace,5. Daily average NFT price on each marketplace"
+        "Daily average number of sales on each marketplace,Daily average volume of sales on each marketplace,Daily average unique buyers on each marketplace,Daily average unique sellers on each marketplace,Daily average NFT price on each marketplace"
     )
 
 export const getCertainCollectionMarketplacesComparisonDailyAverageApi = (collectionName: string) =>
