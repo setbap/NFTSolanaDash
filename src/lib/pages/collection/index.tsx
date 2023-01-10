@@ -135,12 +135,15 @@ const NFT = ({
       />
       <Box mx={"auto"} pt="4" px={{ base: 3, sm: 2, md: 8 }}>
         <Progress
+          zIndex={"banner"}
           position={"fixed"}
           bottom={"0"}
           height="8px"
           width="full"
           size="xs"
-          isIndeterminate
+          left={"0"}
+          colorScheme="red"
+          isIndeterminate={query.isLoading}
         />
         <Box
           zIndex={"banner"}
@@ -164,17 +167,7 @@ const NFT = ({
             ))}
           </Select>
         </Box>
-        <Spinner
-          thickness="8px"
-          left="32px"
-          bottom="64px"
-          position="fixed"
-          size="xl"
-          emptyColor="gray.200"
-          color="red.500"
-          zIndex={"banner"}
-          visibility={query.isLoading ? "visible" : "hidden"}
-        />
+
         <HeaderSection isChildMarkdown={false} title="Solana NFT Collection">
           {/* <Wrap>
             <Progress
