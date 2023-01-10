@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Progress,
+  Select,
   SimpleGrid,
   Spinner,
   useToast,
@@ -133,10 +134,40 @@ const NFT = ({
         }}
       />
       <Box mx={"auto"} pt="4" px={{ base: 3, sm: 2, md: 8 }}>
+        <Progress
+          position={"fixed"}
+          bottom={"0"}
+          height="8px"
+          width="full"
+          size="xs"
+          isIndeterminate
+        />
+        <Box
+          zIndex={"banner"}
+          position={"fixed"}
+          bottom={"64px"}
+          right={"32px"}
+        >
+          <Select
+            border={"none"}
+            value={pageData.collectionName}
+            bg={names.BLOCKCHAIN_HEADER_GRADIENT}
+            onChange={(e) => submitAddress(e.target.value)}
+            size={{ sm: "md", md: "lg" }}
+            borderRadius={{ sm: "12px" }}
+            color="white"
+          >
+            {collectionNames.data.map((name, index) => (
+              <option value={name["Collection Name"]} key={index}>
+                {name["Collection Name"]}
+              </option>
+            ))}
+          </Select>
+        </Box>
         <Spinner
-          thickness="4px"
-          right="32px"
-          bottom="32px"
+          thickness="8px"
+          left="32px"
+          bottom="64px"
           position="fixed"
           size="xl"
           emptyColor="gray.200"
@@ -145,7 +176,7 @@ const NFT = ({
           visibility={query.isLoading ? "visible" : "hidden"}
         />
         <HeaderSection isChildMarkdown={false} title="Solana NFT Collection">
-          <Wrap>
+          {/* <Wrap>
             <Progress
               width={"full"}
               left={-1}
@@ -185,7 +216,7 @@ const NFT = ({
                 {name["Collection Name"]}
               </Button>
             ))}
-          </Wrap>
+          </Wrap> */}
         </HeaderSection>
         <Box pt={"4"}></Box>
         <HeaderSection title="Glance">
@@ -341,7 +372,7 @@ according section defined in above, i prepare some of static about these topics.
             link={certainCollectionDailySingleNumber.key}
           />
 
-          <HeaderSection title="24h changes" />
+          <HeaderSection spanSize={3} title="24h changes" />
           <StatsCard
             stat={
               pageData
@@ -467,7 +498,7 @@ according section defined in above, i prepare some of static about these topics.
         <SimpleGrid
           position={"relative"}
           transition={"all 0.9s ease-in-out"}
-          pb={"6"}
+          pb={"8"}
           gap={4}
           zIndex={100}
           columns={{ sm: 1, md: 1, lg: 2, "2xl": 3 }}
