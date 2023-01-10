@@ -162,11 +162,15 @@ const NFT = ({
             borderRadius={"12px"}
             color="white"
           >
-            {collectionNames.data.map((name, index) => (
-              <option value={name["Collection Name"]} key={index}>
-                Collection :{name["Collection Name"]}
-              </option>
-            ))}
+            <optgroup label="select collection">
+              {collectionNames.data.map((name, index) => (
+                <option value={name["Collection Name"]} key={index}>
+                  <div style={{ color: "white", backgroundColor: "black" }}>
+                    {name["Collection Name"]}
+                  </div>
+                </option>
+              ))}
+            </optgroup>
           </Select>
         </Box>
 
