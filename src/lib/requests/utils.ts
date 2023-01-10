@@ -1,3 +1,4 @@
+import { Flipside, Query, QueryResultSet } from "@flipsidecrypto/sdk/dist/src";
 import { ReturnDataType } from "lib/types/base";
 import moment from "moment";
 
@@ -151,6 +152,30 @@ export function summerizeRow2Item<T extends { [key: string]: any }>(
   }));
   return x2;
 }
+
+
+export const flipsideQueryExecuter = async <T>(
+  query: string
+): Promise<T> => {
+  const flipside = new Flipside(
+    `${process.env.FLIPSIDE_KEY}`,
+    "https://node-api.flipsidecrypto.com"
+  );
+
+
+  const queryData: Query = {
+    sql: query,
+    ttlMinutes: 60 * 6,
+    timeoutMinutes: 60 * 6,
+    cached: true,
+  };
+
+  const result = await flipside.query.run(queryData);
+  if (result.status !== 'finished') {
+    throw new Error("error in running flipside queries")
+  }
+  return result.records as T
+};
 
 /*
 function for complex data with pivot

@@ -13,10 +13,12 @@ const HeaderSection = ({
   children,
   spanSize = 3,
   title,
+  isChildMarkdown = true,
 }: {
   title: string;
   children?: ReactNode;
   spanSize?: number;
+  isChildMarkdown?: boolean;
 }) => {
   const bgCard = useColorModeValue("white", "#191919");
   const textColor = useColorModeValue("gray.900", "gray.100");
@@ -34,12 +36,16 @@ const HeaderSection = ({
       borderRadius={"2xl"}
       width="100%"
       colSpan={GRID_ITEM_SIZE[spanSize - 1]}
+      position="relative"
+      overflow={"hidden"}
     >
       <Box px="4" pb="3" pt={"1"}>
         <Heading as="h2" size={"xl"} py={"1.5"} id={title} data-section>
           {title}
         </Heading>
-        <MDRenderer>{children}</MDRenderer>
+        <Box>
+          {isChildMarkdown ? <MDRenderer>{children}</MDRenderer> : children}
+        </Box>
       </Box>
     </GridItem>
   );
