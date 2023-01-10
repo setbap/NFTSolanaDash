@@ -25,16 +25,16 @@ export interface CertainCollectioncurrentValueAndChangeRatherThanYesterday {
     "Previous 24h unique Buyers": 35,
     "change (%) unique buyers": 0,
     "24h unique sellers": 38,
-    "Previous 24h Unique Sellers": 27,
-    "change (%) Unique sellers": 40.7407
+    "Previous 24h unique Sellers": 27,
+    "change (%) unique sellers": 40.7407
 }
 
 export interface CertainCollectionNFTSelling {
     "Day": "2022-08-22 00:00:00.000",
     "Sales Volume": 3336161.0248027,
     "AVG NFT Price": 101.286083697,
-    "Unique Buyers": 7107,
-    "Unique Sellers": 5602,
+    "unique Buyers": 7107,
+    "unique Sellers": 5602,
     "Sales Count": 32938,
     "MA7 Sales Volume": 3336161.0248027,
     "MA7 Sales Count": 32938,

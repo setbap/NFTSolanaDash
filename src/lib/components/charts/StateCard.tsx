@@ -75,7 +75,7 @@ export const StatsCard = (props: StatsCardProps) => {
     if (status === "custom" && statusColor !== defaultColor) {
       setStatusColor(customColor);
     }
-  }, []);
+  }, [stat]);
 
   const calculateNum = (num: number) => {
     if (!forceDecimal) {
