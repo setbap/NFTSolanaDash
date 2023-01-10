@@ -86,10 +86,12 @@ const ChartBox = ({
   const [selectedDate, setSelectedDate] = useState<number | string>(
     isNotDate
       ? ""
-      : defultSelectedRange === 2022 ?
-        Math.round(
-          (maxDate!.toDate().getTime() - new Date(2022, 0, 1).getTime()) / (1000 * 60 * 60 * 24)
-        ) + 1 : 'all'
+      : defultSelectedRange === 2022
+      ? Math.round(
+          (maxDate!.toDate().getTime() - new Date(2022, 0, 1).getTime()) /
+            (1000 * 60 * 60 * 24)
+        ) + 1
+      : "all"
   );
   const [chartData, setChartData] = useState(data);
   const [savedDailyChart, setSavedDailyChart] = useState(data);
@@ -157,16 +159,15 @@ const ChartBox = ({
     if (isNotDate) {
       return;
     }
-    if (defultSelectedRange === 'all') {
-      setChartData(data)
-      setSelectedDate('all')
+    if (defultSelectedRange === "all") {
+      setChartData(data);
+      setSelectedDate("all");
       return;
     }
     filterDateAccordingDay(
       Math.round(
-        (maxDate!.toDate().getTime() -
-          new Date(2022, 0, 1).getTime()) /
-        (1000 * 60 * 60 * 24)
+        (maxDate!.toDate().getTime() - new Date(2022, 0, 1).getTime()) /
+          (1000 * 60 * 60 * 24)
       ) + 1
     );
   };
@@ -179,13 +180,13 @@ const ChartBox = ({
 
   useEffect(() => {
     resetChartData();
-  }, []);
+  }, [data]);
 
   const resetToAll = () => {
-    setChartData(data)
-    setSelectedDate('all')
+    setChartData(data);
+    setSelectedDate("all");
     return;
-  }
+  };
 
   return (
     <GridItem
@@ -411,12 +412,8 @@ const ChartBox = ({
                     day:
                       Math.round(
                         (maxDate!.toDate().getTime() -
-                          new Date(
-                            2022,
-                            0,
-                            1
-                          ).getTime()) /
-                        (1000 * 60 * 60 * 24)
+                          new Date(2022, 0, 1).getTime()) /
+                          (1000 * 60 * 60 * 24)
                       ) + 1,
                     name: "2022".toString(),
                   },

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   AreaChart,
   XAxis,
@@ -128,6 +128,10 @@ const StackedAreaChart = ({
     setChartTimeFrame("day");
     setChartData(values);
   };
+
+  useEffect(() => {
+    setChartData(defaultTime === "day" ? values : monthlyValues);
+  }, [values]);
 
   return (
     <GridItem

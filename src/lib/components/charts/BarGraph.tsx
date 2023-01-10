@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -135,6 +135,10 @@ const BarGraph = ({
     setChartTimeFrame("day");
     setChartData(values);
   };
+
+  useEffect(() => {
+    setChartData(defualtTime === "day" ? values : monthlyValues);
+  }, [values]);
 
   return (
     <GridItem
