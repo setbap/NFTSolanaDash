@@ -140,7 +140,9 @@ const NFT = ({
           bottom={"0"}
           height="8px"
           width="full"
-          size="xs"
+          hasStripe
+          bg="transparent"
+          size={["sm", "md", "lg"]}
           left={"0"}
           colorScheme="red"
           isIndeterminate={query.isLoading}
@@ -148,21 +150,21 @@ const NFT = ({
         <Box
           zIndex={"banner"}
           position={"fixed"}
-          bottom={"64px"}
-          right={"32px"}
+          bottom={["42px", "64px"]}
+          right={["12px", "32px"]}
         >
           <Select
             border={"none"}
             value={pageData.collectionName}
             bg={names.BLOCKCHAIN_HEADER_GRADIENT}
             onChange={(e) => submitAddress(e.target.value)}
-            size={{ sm: "md", md: "lg" }}
-            borderRadius={{ sm: "12px" }}
+            size={["md", "lg"]}
+            borderRadius={"12px"}
             color="white"
           >
             {collectionNames.data.map((name, index) => (
               <option value={name["Collection Name"]} key={index}>
-                {name["Collection Name"]}
+                Collection :{name["Collection Name"]}
               </option>
             ))}
           </Select>
