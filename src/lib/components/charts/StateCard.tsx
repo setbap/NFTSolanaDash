@@ -199,7 +199,7 @@ export const StatsCard = (props: StatsCardProps) => {
         left={"65%"}
         pos="absolute"
       ></Box>
-      {change != null && (
+      {change != null && change != 0 && (
         <Box
           width={"30%"}
           h="full"
@@ -243,6 +243,7 @@ export const StatsCard = (props: StatsCardProps) => {
               {splitedChange[0] as string}
             </Box>
             <Box verticalAlign={"baseline"} fontSize={"sm"} fontWeight="bold">
+              {splitedChange.length === 1 && changeUnit}
               {splitedChange.length === 2
                 ? `.${splitedChange[1]}${changeUnit}`
                 : ""}

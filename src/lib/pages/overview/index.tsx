@@ -67,7 +67,7 @@ const NFT = ({
       <Box mx={"auto"} pt="4" px={{ base: 3, sm: 2, md: 8 }}>
         <HeaderSection title="Solana NFT">
           {`
-Solana is an open-source blockchain that is well-suited to hosting and trading Non-Fungible Tokens (NFTs). NFTs are digital tokens that represent digital assets, such as artwork, collectibles, or even real-world items like tickets or concert passes. The Solana protocol enables developers to create, transfer, and trade NFTs in a secure and trustless fashion. It also offers scalability, low transaction fees, and fast transaction times. Solana has become a popular platform for the creation, trading, and collection of digital assets and NFTs, with many high-profile projects launching on the Solana blockchain.
+On the Solana blockchain, NFTs are used to represent digital collectibles, create tradable digital assets, and create in-game items that can be used in decentralized applications (dApps). NFTs on the Solana network benefit from low gas fees and fast transaction speeds [1], making them an attractive option for those looking to build or trade digital assets.
 `}
         </HeaderSection>
         <Box pt={"4"}></Box>
